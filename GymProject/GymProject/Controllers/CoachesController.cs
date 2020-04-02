@@ -36,19 +36,16 @@ namespace GymProject.Controllers
 
         // POST: Coaches/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Age,Sport")] Coach coach)
+        public ActionResult Create(Coach coach)
         {
-            //if (ModelState.IsValid)
-            //{
+            if (ModelState.IsValid)
+            {
                 db.Coaches.Add(coach);
                 db.SaveChanges();
                 return RedirectToAction("Index");
-            //}
-
-
-            //return View(coach);
         }
+            return View(coach);
+    }
 
         // GET: Coaches/Edit/5
         public ActionResult Edit(int? id)
@@ -66,8 +63,6 @@ namespace GymProject.Controllers
         }
 
         // POST: Coaches/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Age,Sport")] Coach coach)

@@ -62,7 +62,7 @@ class CoachForm extends React.Component {
         if (!coachName) {
             return;
         }
-        this.props.onCoachSubmit({ name: coachName, age: coachAge, coach: coachSport });
+        this.props.onCoachSubmit({ name: coachName, age: coachAge, sport: coachSport });
         console.log(this.props.onCoachSubmit);
         this.state = { name: "", age: "", sport: "" };
     }
