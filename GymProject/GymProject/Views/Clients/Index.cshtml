@@ -1,0 +1,191 @@
+﻿@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            GetClients();
+            $("#editClient").click(function (event) {
+                event.preventDefault();
+                EditClient();
+            });
+            $("#addClient").click(function (event) {
+                event.preventDefault();
+                AddClient();
+            });
+        });
+        function GetClients() {
+            $("#createBlock").css('display', 'block');
+            $("#editBlock").css('display', 'none');
+            $.ajax({
+                url: '/api/ClientsApi',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    WriteResponse(data);
+                },
+                error: function (x, y, z) {
+                    console.log("Error: " + x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+        function AddClient() {
+            var client = {
+                Name: $('#addName').val(),
+                Age: $('#addAge').val(),
+                CoachId: $('#addCoachId').val()
+            };
+            $.ajax({
+                url: '/api/ClientsApi/',
+                type: 'POST',
+                data: JSON.stringify(client),
+                contentType: "application/json;charset=utf-8",
+                success: function (data) {
+                    GetClients();
+                },
+                error: function (x, y, z) {
+                    console.log("Error: " + x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+        function DeleteClient(id) {
+            $.ajax({
+                url: '/api/ClientsApi/' + id,
+                type: 'DELETE',
+                contentType: "application/json;charset=utf-8",
+                success: function (data) {
+                    GetClients();
+                },
+                error: function (x, y, z) {
+                    console.log("Error: " + x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+        function EditClient() {
+            var id = $('#editId').val()
+            var client = {
+                Id: $('#editId').val(),
+                Name: $('#editName').val(),
+                Age: $('#editAge').val(),
+                CoachId: $('#editCoachId').val()
+            };
+            $.ajax({
+                url: '/api/ClientsApi/' + id,
+                type: 'PUT',
+                data: JSON.stringify(client),
+                contentType: "application/json;charset=utf-8",
+                success: function (data) {
+                    GetClients();
+                },
+                error: function (x, y, z) {
+                    console.log("Error: " + x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+        function WriteResponse(clients) {
+            var strResult = "<table class='table' id='tableBlock'>" +
+                "<tr>" +
+                "<th>" +
+                "Name" +
+                "</th>" +
+                "<th>" +
+                "Age" +
+                "</th>" +
+                "<th>"
+            "CoachId" +
+                "</th></tr>"
+            $.each(clients, function (index, client) {
+                strResult += "</td><td>" + client.Name +
+                    "</td><td>" + client.Age +
+                    "</td><td>" + client.CoachId +
+                    "</td><td>" +
+                    "<a class='btn btn-primary' id='editItem' data-item='" + client.Id +
+                    "' onclick='EditItem(this);' >Edit</a>" + " " +
+                    "<a class='btn btn-danger' id='delItem' data-item='" + client.Id +
+                    "' onclick='DeleteItem(this);' >Delete</a></td>"
+
+                "</tr>";
+            });
+            strResult += "</table>";
+            $("#tableBlock").html(strResult);
+        }
+        function DeleteItem(el) {
+            var id = $(el).attr('data-item');
+            DeleteClient(id);
+        }
+        function EditItem(el) {
+            var id = $(el).attr('data-item');
+            GetClient(id);
+        }
+        function ShowClient(client) {
+            if (client != null) {
+                $("#createBlock").css('display', 'none');
+                $("#editBlock").css('display', 'block');
+                $("#editId").val(client.Id);
+                $("#editName").val(client.Name);
+                $("#editAge").val(client.Age);
+                $("#editCoachId").val(client.CoachId);
+            }
+            else {
+                console.log("This is no client");
+            }
+        }
+        function GetClient(id) {
+            $.ajax({
+                url: '/api/ClientsApi/' + id,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    ShowClient(data);
+                },
+                error: function (x, y, z) {
+                    console.log("Error: " + x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+    </script>
+}
+<br />
+<br />
+<br />
+<div id="editBlock">
+    <p><b>Edit Client</b></p>
+    <table>
+        <tr>
+            <td><input type="hidden" id="editId" /></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" id="editName" /></td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><input type="text" id="editAge" /></td>
+        </tr>
+        <tr>
+            <td>CoachId:</td>
+            <td><input type="text" id="editCoachId" /></td>
+        </tr>
+    </table>
+    <button id="editClient" class="button">Save</button>
+</div>
+
+<div id="createBlock">
+    <p><b>Add Client</b></p>
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" id="addName" /></td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><input type="text" id="addAge" /></td>
+        </tr>
+        <tr>
+            <td>CoachId: </td>
+            <td><input type="text" id="addCoachId" /></td>
+        </tr>
+    </table>
+    <button id="addClient" class="button">Save</button>
+</div>
+
+<div id="tableBlock"></div>

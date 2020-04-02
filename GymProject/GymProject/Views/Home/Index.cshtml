@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Coaches</title>
+</head>
+<body>
+    <div>
+        <div><a href="/Coaches">Coaches</a> || <a href="/Clients">Clients</a></div>
+        <h3>Caoches</h3>
+        <table>
+            <tr>
+                <td><p>Name</p></td>
+                <td><p>Age</p></td>
+                <td><p>Sport</p></td>
+                <td></td>
+            </tr>
+            @*@foreach (var b in ViewBag.Coaches)
+            {
+                <tr>
+                    <td><p>@b.Name</p></td>
+                    <td><p>@b.Age</p></td>
+                    <td><p>@b.Sport</p></td>
+                    <td><p><a href="/Home/Buy/@b.Id">Купить</a></p></td>
+                </tr>
+            }*@
+        </table>
+    </div>
+</body>
+</html>
