@@ -1,35 +1,49 @@
-﻿@{
-    Layout = null;
-}
+﻿@*@{
+        Layout = null;
+    }
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Coaches</title>
-</head>
-<body>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>FrontendLabs</title>
+    </head>
+    <body>*@
+<div class="jumbotron">
+    <h1>Welcome to the Gym Project</h1>
+    <p>This is test Gym Project</p>
+
     <div>
-        <div><a href="/Coaches">Coaches</a> || <a href="/Clients">Clients</a></div>
-        <h3>Caoches</h3>
-        <table>
-            <tr>
-                <td><p>Name</p></td>
-                <td><p>Age</p></td>
-                <td><p>Sport</p></td>
-                <td></td>
-            </tr>
-            @*@foreach (var b in ViewBag.Coaches)
-            {
-                <tr>
-                    <td><p>@b.Name</p></td>
-                    <td><p>@b.Age</p></td>
-                    <td><p>@b.Sport</p></td>
-                    <td><p><a href="/Home/Buy/@b.Id">Купить</a></p></td>
-                </tr>
-            }*@
-        </table>
+        <input id="value" type="text" />
+        <input id="button" type="button" value="Send message" />
     </div>
-</body>
-</html>
+    <br />
+    <br />
+    <br />
+
+    <div>
+        <iframe scrolling="yes" allowtransparency="true" id="iframe"
+                src="https://localhost:44333/"
+                style="background-color:#f7f7fa;"
+                width="900" height="500"></iframe>
+    </div>
+    <br />
+
+    @section scripts
+{
+        <script>
+            button.onclick = () => {
+                let val = document.getElementById('value').value;
+                let wn = document.getElementById('iframe').contentWindow;
+                wn.postMessage(val, 'https://localhost:44333/');
+                console.log("send a message");
+            };
+
+        </script>
+    }
+</div>
+
+
+@*</body>
+    </html>*@

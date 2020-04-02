@@ -1,0 +1,24 @@
+﻿<div class="jumbotron jumbotron-fluid">
+    <h1>Welcome to the iFrame Example</h1>
+    <div class="container">
+        <p>Gym Address: <input value="" id="data" /></p>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(() => {
+        console.log("document was ready");
+        if (window.addEventListener) {
+            console.log("adding listener");
+            window.addEventListener("message", listener);
+        } else {
+            window.attachEvent("onmessage", listener);
+        }
+    });
+    let listener = (event) => {
+        console.log(event.data);
+        $('#data').val(event.data);
+    }
+    </script>
+}
