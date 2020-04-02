@@ -17,6 +17,11 @@ namespace GymProject.Models
             db.Clients.Add(new Client { Name = "Boom Boom", Age = 25, CoachId = 1 });
             db.Clients.Add(new Client { Name = "Timon", Age = 15, CoachId = 3 });
             db.Clients.Add(new Client { Name = "Pumba", Age = 45, CoachId = 2 });
+
+            db.Rooms.Add(new Room { Name = "Strong", Floor = 25, Sport = "Powerlifting" });
+            db.Rooms.Add(new Room { Name = "Cardio", Floor = 2, Sport="Running" });
+            db.Rooms.Add(new Room { Name = "Swimming Pool", Floor = 5, Sport = "Swimming" });
+
             base.Seed(db);
         }
     }

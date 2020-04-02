@@ -1,0 +1,15 @@
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\bin\Debug\GymWebTests.dll
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\bin\Debug\GymWebTests.pdb
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\bin\Debug\WebDriver.dll
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\bin\Debug\WebDriver.xml
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\obj\Debug\GymWebTests.csprojAssemblyReference.cache
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\obj\Debug\GymWebTests.csproj.CopyComplete
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\obj\Debug\GymWebTests.dll
+E:\Front\FrontEndLabs\GymWebTests\GymWebTests\obj\Debug\GymWebTests.pdb

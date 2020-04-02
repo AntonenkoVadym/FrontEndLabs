@@ -1,38 +1,26 @@
-﻿@*@{
-        Layout = null;
-    }
+﻿<div class="jumbotron">
+        <h1>Welcome to the Gym Project</h1>
+        <p>This is test Gym Project</p>
 
-    <!DOCTYPE html>
+        <div>
+            <input id="value" type="text" />
+            <input id="button" type="button" value="Send message" />
+        </div>
+        <br />
+        <br />
+        <br />
 
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>FrontendLabs</title>
-    </head>
-    <body>*@
-<div class="jumbotron">
-    <h1>Welcome to the Gym Project</h1>
-    <p>This is test Gym Project</p>
+        <div>
+            <iframe scrolling="yes" allowtransparency="true" id="iframe"
+                    src="https://localhost:44333/"
+                    style="background-color:#f7f7fa;"
+                    width="900" height="500"></iframe>
+        </div>
+        <br />
 
-    <div>
-        <input id="value" type="text" />
-        <input id="button" type="button" value="Send message" />
-    </div>
-    <br />
-    <br />
-    <br />
-
-    <div>
-        <iframe scrolling="yes" allowtransparency="true" id="iframe"
-                src="https://localhost:44333/"
-                style="background-color:#f7f7fa;"
-                width="900" height="500"></iframe>
-    </div>
-    <br />
-
-    @section scripts
+        @section scripts
 {
-        <script>
+            <script>
             button.onclick = () => {
                 let val = document.getElementById('value').value;
                 let wn = document.getElementById('iframe').contentWindow;
@@ -40,10 +28,6 @@
                 console.log("send a message");
             };
 
-        </script>
-    }
+            </script>
+        }
 </div>
-
-
-@*</body>
-    </html>*@

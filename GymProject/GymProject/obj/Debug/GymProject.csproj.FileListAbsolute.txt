@@ -234,7 +234,7 @@ E:\Front\FrontEndLabs\GymProject\GymProject\bin\System.Web.Http.WebHost.xml
 E:\Front\FrontEndLabs\GymProject\GymProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\Front\FrontEndLabs\GymProject\GymProject\bin\ru-ru\JavaScriptEngineSwitcher.Core.resources.dll
 E:\Front\FrontEndLabs\GymProject\GymProject\bin\ru-ru\JavaScriptEngineSwitcher.V8.resources.dll
-E:\Front\FrontEndLabs\GymProject\GymProject\obj\Debug\GymProject.csprojAssemblyReference.cache
 E:\Front\FrontEndLabs\GymProject\GymProject\obj\Debug\GymProject.csproj.CopyComplete
 E:\Front\FrontEndLabs\GymProject\GymProject\obj\Debug\GymProject.dll
 E:\Front\FrontEndLabs\GymProject\GymProject\obj\Debug\GymProject.pdb
+E:\Front\FrontEndLabs\GymProject\GymProject\obj\Debug\GymProject.csprojAssemblyReference.cache
