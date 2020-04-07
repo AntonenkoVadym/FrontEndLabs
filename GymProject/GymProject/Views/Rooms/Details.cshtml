@@ -1,50 +1,56 @@
 ﻿@model GymProject.Models.Room
-
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
+<div>
         <h4>Room</h4>
         <hr />
         <dl class="dl-horizontal">
             <dt>
                 @Html.DisplayNameFor(model => model.Name)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Name)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Floor)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Floor)
             </dd>
-    
+
             <dt>
                 @Html.DisplayNameFor(model => model.Sport)
             </dt>
-    
+
             <dd>
                 @Html.DisplayFor(model => model.Sport)
             </dd>
-    
+            <dd>
+                <div>
+                    <input id="value" type="text" />
+                    <input id="button" type="button" value="Send message" />
+                </div>
+            </dd>
         </dl>
+
+        <div>
+            <iframe scrolling="yes" allowtransparency="true" id="iframe"
+                    src="https://localhost:44333/"
+                    style="background-color:#f7f7fa;"
+                    width="900" height="500"></iframe>
+        </div>
+        <br />
+
+        @section scripts
+{
+            <script>
+            button.onclick = () => {
+                let val = document.getElementById('value').value;
+                let wn = document.getElementById('iframe').contentWindow;
+                wn.postMessage(val, 'https://localhost:44333/');
+                console.log("send a message");
+            };
+            </script>
+        }
     </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>

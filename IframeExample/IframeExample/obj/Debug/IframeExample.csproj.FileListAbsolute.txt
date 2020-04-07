@@ -76,3 +76,13 @@ E:\Front\FrontEndLabs\IframeExample\IframeExample\obj\Debug\IframeExample.csproj
 E:\Front\FrontEndLabs\IframeExample\IframeExample\obj\Debug\IframeExample.csproj.CopyComplete
 E:\Front\FrontEndLabs\IframeExample\IframeExample\obj\Debug\IframeExample.dll
 E:\Front\FrontEndLabs\IframeExample\IframeExample\obj\Debug\IframeExample.pdb
+E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\EntityFramework.dll
+E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\EntityFramework.SqlServer.dll
+E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\EntityFramework.xml
+E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\EntityFramework.SqlServer.xml
+E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\System.Net.Http.Formatting.dll
+E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\System.Web.Http.dll
+E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\System.Web.Http.WebHost.dll
+E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\System.Net.Http.Formatting.xml
+E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\System.Web.Http.xml
+E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\System.Web.Http.WebHost.xml

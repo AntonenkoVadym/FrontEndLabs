@@ -19,6 +19,120 @@
     let listener = (event) => {
         console.log(event.data);
         $('#data').val(event.data);
+        var url = 'https://localhost:44333/Rooms/Edit/' + parseInt(event.data);
+        window.location.replace(url);
+        //window.location.href = 'https://localhost:44333/Rooms/Edit/' + parseInt(event.data);
     }
     </script>
 }
+        
+         @*/*function EditRoom(idRoom) {
+            var id = idRoom
+            var room = {
+                Id:idRoom,
+                Name: $('#editName').val(),
+                Floor: $('#editFloor').val(),
+                Sport: $('#editSport').val()
+            };
+            $.ajax({
+                url: 'api/RoomsApi/' + id,
+                type: 'PUT',
+                data: JSON.stringify(client),
+                contentType: "application/json;charset=utf-8",
+                success: function (data) {
+                    GetRooms();
+                },
+                error: function (x, y, z) {
+                    console.log("Error: " + x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+        function WriteResponse(rooms) {
+            var strResult = "<table class='table' id='tableBlock'>" +
+                "<tr>" +
+                "<th>" +
+                "Name" +
+                "</th>" +
+                "<th>" +
+                "Floor" +
+                "</th>" +
+                "<th>"+
+                "Sport" +
+                "</th></tr>"
+            $.each(rooms, function (index, room) {
+                strResult += "</td><td>" + room.Name +
+                    "</td><td>" + room.Floor +
+                    "</td><td>" + room.Sport +
+                    "</td><td>" +
+                   "</tr>";
+            });
+            strResult += "</table>";
+            $("#tableBlock").html(strResult);
+        }
+        function EditItem(el) {
+            var id = $(el).attr('data-item');
+            GetRoom(event.data);
+        }
+        function ShowRoom(room) {
+            if (client != null) {
+                $("#createBlock").css('display', 'none');
+                $("#editBlock").css('display', 'block');
+                $("#editId").val(event.data);
+                $("#editName").val(room.Name);
+                $("#editFloor").val(room.Floor);
+                $("#editSport").val(room.Sport);
+            }
+            else {
+                console.log("This is no client");
+            }
+        }
+        function GetRoom(id) {
+            $.ajax({
+                url: 'api/RoomsApi/' + id,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    ShowClient(data);
+                },
+                error: function (x, y, z) {
+                    console.log("Error: " + x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+         function GetRooms() {
+            $("#editBlock").css('display', 'none');
+            $.ajax({
+                url: '/api/RoomsApi',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    WriteResponse(data);
+                },
+                error: function (x, y, z) {
+                    console.log("Error: " + x + '\n' + y + '\n' + z);
+                }
+            });
+        }
+}*@
+@*<div id="editBlock">
+    <p><b>Edit Client</b></p>
+    <table>
+        <tr>
+            <td><input type="hidden" id="editId" /></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td><input type="text" id="editName" /></td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td><input type="text" id="editAge" /></td>
+        </tr>
+        <tr>
+            <td>CoachId:</td>
+            <td><input type="text" id="editCoachId" /></td>
+        </tr>
+    </table>
+    <button id="editClient" class="button">Save</button>
+</div>*/*@

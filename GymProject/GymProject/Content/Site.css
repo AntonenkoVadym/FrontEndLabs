@@ -1,24 +1,48 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿button, #addUser {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    background: rgb(64,199,129);
+    transition: 0.2s;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    button.edit {
+        background: rgb(0,0,255);
+    }
+
+#delete {
+    background: rgb(255,0,0);
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    border-radius: 3px;
+    transition: 0.2s;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+    button:hover, #delete:hover, #addUser:hover {
+        background: rgb(255, 211, 0);
+    }
+
+th {
+    background-color: #4CAF50;
+    color: white;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
+
+input[type=text] {
+    border: 2px solid grey;
+    border-radius: 4px;
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+}
+
+    input[type=text]:focus {
+        background-color: lightblue;
+    }

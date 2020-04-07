@@ -10,42 +10,53 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Room</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+<div class="form-horizontal">
+    <h4>Room</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Floor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Floor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Floor, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Sport, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Sport, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Sport, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        <dt>
+            @Html.DisplayNameFor(model => model.Floor)
+        </dt>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+        <dd>
+            @Html.DisplayFor(model => model.Floor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sport)
+        </dd>
+
+    </dl>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input id="value" type="text" value=@Html.DisplayFor(model => model.Id) />
+            <input id="button" type="button" value="Send message" />
         </div>
     </div>
+    <div>
+        <iframe scrolling="yes" allowtransparency="true" id="iframe"
+                src="https://localhost:44333/"
+                style="background-color:#f7f7fa;"
+                width="900" height="500"></iframe>
+    </div>
+
+</div>
 }
 
 <div>
@@ -53,5 +64,12 @@
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        button.onclick = () => {
+            let val = document.getElementById('value').value;
+            let wn = document.getElementById('iframe').contentWindow;
+            wn.postMessage(val, 'https://localhost:44333/');
+            console.log("send a message");
+        };
+    </script>
 }
