@@ -5,11 +5,13 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Http.Cors;
 using System.Web.Mvc;
 using IframeExample.Models;
 
 namespace IframeExample.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class RoomsController : Controller
     {
         private GymContext db = new GymContext();

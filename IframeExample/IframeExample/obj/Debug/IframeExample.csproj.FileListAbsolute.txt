@@ -86,3 +86,6 @@ E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\System.Web.Http.WebHost.dl
 E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\System.Net.Http.Formatting.xml
 E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\System.Web.Http.xml
 E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\System.Web.Http.WebHost.xml
+E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\System.Web.Cors.dll
+E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\System.Web.Http.Cors.dll
+E:\Front\FrontEndLabs\IframeExample\IframeExample\bin\System.Web.Http.Cors.xml
